@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/branch-manager/layout,_N_T_/branch-manager/login/layout,_N_T_/branch-manager/login/page,_N_T_/branch-manager/login"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/branch-manager/login/__PAGE__",
+    "/branch-manager/login",
+    "/branch-manager",
+    "/_index",
+    "/_head"
+  ]
+}

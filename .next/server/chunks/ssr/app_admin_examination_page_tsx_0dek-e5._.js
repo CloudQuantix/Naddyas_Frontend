@@ -1,0 +1,3 @@
+module.exports=[23161,a=>{"use strict";var b=a.i(87924),c=a.i(72131),d=a.i(92376);a.s(["default",0,function(){let a=(0,d.useRouter)();return(0,c.useEffect)(()=>{a.replace("/examination/exam-admin")},[a]),(0,b.jsxs)("div",{style:{padding:40,textAlign:"center",fontFamily:"system-ui, sans-serif"},children:[(0,b.jsx)("p",{children:"Redirecting to Exam Coordinator…"}),(0,b.jsxs)("p",{style:{marginTop:12,fontSize:14,color:"#666"},children:["Use ",(0,b.jsx)("strong",{children:"Examination"})," → ",(0,b.jsx)("strong",{children:"Exam_Admin"})," on the site, or"," ",(0,b.jsx)("a",{href:"/examination/exam-admin",style:{color:"#800000"},children:"open Exam Coordinator"}),"."]})]})}])}];
+
+//# sourceMappingURL=app_admin_examination_page_tsx_0dek-e5._.js.map

@@ -1,0 +1,22 @@
+{
+  "pages": {
+    "/_app": []
+  },
+  "devFiles": [],
+  "polyfillFiles": [
+    "static/chunks/0cz1d0mv5g_q7.js"
+  ],
+  "lowPriorityFiles": [
+    "static/GAHvZZiEm3MdJYEeIdA9X/_buildManifest.js",
+    "static/GAHvZZiEm3MdJYEeIdA9X/_ssgManifest.js",
+    "static/GAHvZZiEm3MdJYEeIdA9X/_clientMiddlewareManifest.js"
+  ],
+  "rootMainFiles": [
+    "static/chunks/2zjueh7t2vecu.js",
+    "static/chunks/3naxd9qkrqw9x.js",
+    "static/chunks/3peubv2924kx4.js",
+    "static/chunks/2djl616z6gfa9.js",
+    "static/chunks/27jktro2p5rq9.js",
+    "static/chunks/turbopack-0j_q9ogm4cyrk.js"
+  ]
+}

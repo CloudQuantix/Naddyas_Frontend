@@ -1,0 +1,241 @@
+.main {
+  min-height: calc(100vh - 120px);
+  background: #f5f5f5;
+  padding: 32px 20px 48px;
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.containerWide {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.title {
+  color: #800000;
+  font-size: 28px;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+  margin: 0 0 28px 0;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 28px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field label {
+  display: block;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.field input,
+.field select,
+.selectFull {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+  color: #111827;
+  box-sizing: border-box;
+}
+
+.field input:focus,
+.field select:focus,
+.selectFull:focus {
+  outline: none;
+  border-color: #800000;
+  box-shadow: 0 0 0 3px rgba(128, 0, 0, 0.15);
+}
+
+.submitBtn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px 20px;
+  background: #800000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: #6b0f0f;
+}
+
+.submitBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #b91c1c;
+  font-size: 14px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.success {
+  color: #047857;
+  font-size: 14px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.loading {
+  text-align: center;
+  color: #6b7280;
+  padding: 40px 20px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #800000;
+  margin: 20px 0 12px 0;
+}
+
+.sectionTitle:first-of-type {
+  margin-top: 0;
+}
+
+.musicGrid {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.musicCategory h4 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.secondaryBtn {
+  padding: 10px 16px;
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondaryBtn:hover:not(:disabled) {
+  background: #e5e7eb;
+}
+
+.secondaryBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dangerBtn {
+  padding: 10px 16px;
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dangerBtn:hover:not(:disabled) {
+  background: #fee2e2;
+}
+
+.metaLine {
+  font-size: 13px;
+  color: #4b5563;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  margin-top: 12px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.marksTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background: #fff;
+}
+
+.marksTable th,
+.marksTable td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.marksTable th {
+  background: #f9fafb;
+  font-weight: 600;
+  color: #374151;
+}
+
+.disabledStudent {
+  background: #fafafa;
+}
+
+.markInput {
+  width: 72px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.markInput:disabled {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.hint {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 12px;
+}
+
+.smallNote {
+  margin-top: 2px;
+  font-size: 12px;
+  color: #9ca3af;
+}

@@ -1,0 +1,3 @@
+module.exports=[61370,a=>{a.v({container:"Examination-module__Xl7yJa__container",content:"Examination-module__Xl7yJa__content",error:"Examination-module__Xl7yJa__error",examDate:"Examination-module__Xl7yJa__examDate",infoCard:"Examination-module__Xl7yJa__infoCard",infoSection:"Examination-module__Xl7yJa__infoSection",infoTitle:"Examination-module__Xl7yJa__infoTitle",loading:"Examination-module__Xl7yJa__loading",main:"Examination-module__Xl7yJa__main",noItems:"Examination-module__Xl7yJa__noItems",pageTitle:"Examination-module__Xl7yJa__pageTitle",updated:"Examination-module__Xl7yJa__updated"})}];
+
+//# sourceMappingURL=app_examination_Examination_module_css_0c9vg69._.js.map
