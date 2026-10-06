@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import AutoRotatingStrip from './components/AutoRotatingStrip'
 import Courses from './components/Courses'
 import PerformanceOpportunities from './components/PerformanceOpportunities'
+import DonationSection from './components/DonationSection'
 import PopularBlogs from './components/PopularBlogs'
 import ReelsSection from './components/ReelsSection'
 import SectionDivider from './components/SectionDivider'
@@ -20,6 +21,8 @@ export default function Home() {
       <Courses />
       <SectionDivider />
       <PerformanceOpportunities />
+      <SectionDivider />
+      <DonationSection />
       <SectionDivider />
       <PopularBlogs />
       <SectionDivider />

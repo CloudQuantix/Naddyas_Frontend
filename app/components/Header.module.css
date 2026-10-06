@@ -380,19 +380,20 @@
     font-size: 1.8rem;
     font-weight: 700;
     color: #ffffff;
+    -webkit-text-stroke: 1px #00b3ff;
     font-family: 'Dancing Script', 'Brush Script MT', cursive;
     letter-spacing: 1.5px;
-    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.4);
-    animation: textGlow 2s ease-in-out infinite alternate;
+    text-shadow: 0 0 8px #00b3ff, 0 0 15px #00b3ff;
+    animation: textNeonGlow 2s ease-in-out infinite alternate;
   }
 
-  @keyframes textGlow {
+  @keyframes textNeonGlow {
     0% {
-      filter: brightness(1);
+      text-shadow: 0 0 5px #00b3ff, 0 0 10px #00b3ff;
     }
 
     100% {
-      filter: brightness(1.2);
+      text-shadow: 0 0 8px #00b3ff, 0 0 20px #00b3ff, 0 0 30px #00b3ff;
     }
   }
 
