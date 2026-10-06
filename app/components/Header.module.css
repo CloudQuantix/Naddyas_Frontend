@@ -379,22 +379,13 @@
     display: block !important;
     font-size: 1.8rem;
     font-weight: 700;
-    color: #ffffff;
-    -webkit-text-stroke: 1px #00b3ff;
+    color: #ffffff !important;
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    -webkit-text-fill-color: #ffffff !important;
     font-family: 'Dancing Script', 'Brush Script MT', cursive;
     letter-spacing: 1.5px;
-    text-shadow: 0 0 8px #00b3ff, 0 0 15px #00b3ff;
-    animation: textNeonGlow 2s ease-in-out infinite alternate;
-  }
-
-  @keyframes textNeonGlow {
-    0% {
-      text-shadow: 0 0 5px #00b3ff, 0 0 10px #00b3ff;
-    }
-
-    100% {
-      text-shadow: 0 0 8px #00b3ff, 0 0 20px #00b3ff, 0 0 30px #00b3ff;
-    }
+    text-shadow: none !important;
   }
 
   .menuToggle {
@@ -421,10 +412,11 @@
     transform: translateX(100%);
     opacity: 1;
     pointer-events: none;
-    transition: transform 0.3s ease;
-    gap: 12px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    gap: 15px;
     z-index: 1000;
     overflow-y: auto;
+    align-items: flex-start; /* Ensure left alignment */
   }
 
   .navOpen {
@@ -433,7 +425,35 @@
   }
 
   .navLink {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    width: 100%;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  .navOpen .navLink {
+    animation: slideInRight 0.4s ease forwards;
+  }
+
+  .navOpen .navLink:nth-child(1) { animation-delay: 0.1s; }
+  .navOpen .navLink:nth-child(2) { animation-delay: 0.15s; }
+  .navOpen .navLink:nth-child(3) { animation-delay: 0.2s; }
+  .navOpen .navLink:nth-child(4) { animation-delay: 0.25s; }
+  .navOpen .navLink:nth-child(5) { animation-delay: 0.3s; }
+  .navOpen .navLink:nth-child(6) { animation-delay: 0.35s; }
+  .navOpen .navLink:nth-child(7) { animation-delay: 0.4s; }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   .navLink::after {
@@ -451,8 +471,16 @@
   .loginBtn {
     width: 100%;
     text-align: center;
-    padding: 8px 16px;
-    font-size: 0.85rem;
+    padding: 12px 16px;
+    font-size: 1rem;
+    margin-top: 10px;
+    opacity: 0;
+  }
+  
+  .navOpen .admissionBtn,
+  .navOpen .loginBtn {
+    animation: slideInRight 0.4s ease forwards;
+    animation-delay: 0.45s;
   }
 
   .backdrop {

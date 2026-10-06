@@ -435,24 +435,11 @@ export default function DonationPage() {
                         </div>
                     </div>
 
-                    {/* Form Section */}
-                    <form onSubmit={handleSubmit} className={styles.form}>
-                        <div className={styles.formSection}>
-                            <h3 className={styles.sectionTitle}>Donor Information</h3>
-                            
-                            {/* UPI Payment Image */}
-                            <div className={styles.upiContainer}>
-                                <Image
-                                    src="/UPI.png"
-                                    alt="UPI Payment QR Code"
-                                    width={250}
-                                    height={250}
-                                    className={styles.upiImage}
-                                    priority
-                                />
-
-                                <p className={styles.upiText}>Scan to make payment via UPI</p>
-                            </div>
+                    {/* Form & QR Section */}
+                    <div className={styles.contentBody}>
+                        <form onSubmit={handleSubmit} className={styles.form}>
+                            <div className={styles.formSection}>
+                                <h3 className={styles.sectionTitle}>Donor Information</h3>
                             
                             <div className={styles.formGroup}>
                                 <label className={styles.label}>User UPI ID: *</label>
@@ -613,6 +600,34 @@ export default function DonationPage() {
                             </button>
                         </div>
                     </form>
+                    
+                    <div className={styles.qrSection}>
+                        <h3 className={styles.qrHeader}>Scan & Donate</h3>
+                        <div className={styles.upiContainer}>
+                            <Image
+                                src="/UPI.png"
+                                alt="UPI Payment QR Code"
+                                width={280}
+                                height={280}
+                                className={styles.upiImage}
+                                priority
+                            />
+                            <p className={styles.upiText}>Scan with any UPI app to make a donation</p>
+                            <div className={styles.upiIdBadge}>
+                                <span>UPI ID:</span>
+                                <strong>swargumphan@upi</strong>
+                            </div>
+                        </div>
+                        <div className={styles.qrBenefits}>
+                            <h4>Why Donate?</h4>
+                            <ul>
+                                <li>✓ Support young musical talent</li>
+                                <li>✓ Preserve Indian classical heritage</li>
+                                <li>✓ Provide better instruments</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </main>

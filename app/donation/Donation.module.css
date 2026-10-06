@@ -5,7 +5,7 @@
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 40px auto;
     padding: 0 20px;
 }
@@ -22,9 +22,9 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    border-bottom: 2px solid #800000;
+    border-bottom: 2px solid #007BFF;
     padding: 30px 40px;
-    background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
 }
 
 .headerLeft {
@@ -36,7 +36,7 @@
 }
 
 .title {
-    color: #800000;
+    color: #007BFF;
     margin: 0 0 8px 0;
     font-size: 28px;
     font-weight: bold;
@@ -51,7 +51,7 @@
 }
 
 .receiptTitle {
-    color: #800000;
+    color: #007BFF;
     margin: 0 0 12px 0;
     font-size: 24px;
     font-weight: bold;
@@ -64,13 +64,20 @@
 }
 
 .receiptNo strong {
-    color: #800000;
+    color: #007BFF;
     font-weight: 600;
 }
 
 /* Form Section */
+.contentBody {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 0;
+}
+
 .form {
     padding: 40px;
+    border-right: 1px solid #e5e7eb;
 }
 
 .formSection {
@@ -78,7 +85,7 @@
 }
 
 .sectionTitle {
-    color: #800000;
+    color: #007BFF;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 25px;
@@ -86,58 +93,105 @@
     border-bottom: 2px solid #e5e7eb;
 }
 
-/* UPI Payment Section */
+/* UPI & QR Section */
+.qrSection {
+    padding: 40px;
+    background: #fffdf8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qrHeader {
+    color: #007BFF;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
 .upiContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
-    padding: 20px;
-    background: #f9fafb;
-    border-radius: 8px;
-    border: 2px dashed #d1d5db;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    border: 2px solid #007BFF;
+    box-shadow: 0 8px 24px rgba(0, 123, 255, 0.1);
+    position: relative;
 }
 
 .upiImage {
     max-width: 250px;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.upiIdContainer {
-    margin-top: 16px;
-    padding: 12px 20px;
-    background: #fff;
-    border-radius: 6px;
-    border: 1px solid #d1d5db;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.upiIdLabel {
-    margin: 0;
-    font-size: 14px;
-    color: #374151;
-    font-weight: 600;
-}
-
-.upiId {
-    margin: 0;
-    font-size: 16px;
-    color: #800000;
-    font-weight: 700;
-    font-family: 'Courier New', monospace;
+    border: 1px solid #eee;
 }
 
 .upiText {
-    margin-top: 12px;
-    font-size: 14px;
-    color: #6b7280;
+    margin-top: 15px;
+    font-size: 15px;
+    color: #4b5563;
     font-weight: 500;
     text-align: center;
+}
+
+.upiIdBadge {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #007BFF;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+
+.upiIdBadge span {
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+.upiIdBadge strong {
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+.qrBenefits {
+    width: 100%;
+    margin-top: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #007BFF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.qrBenefits h4 {
+    color: #007BFF;
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.qrBenefits ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.qrBenefits li {
+    color: #4b5563;
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-weight: 500;
 }
 
 .formGroup {
@@ -168,8 +222,8 @@
 .input:focus,
 .textarea:focus {
     outline: none;
-    border-color: #800000;
-    box-shadow: 0 0 0 3px rgba(128, 0, 0, 0.1);
+    border-color: #007BFF;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
 }
 
 .input:disabled {
@@ -208,7 +262,7 @@
 
 .submitButton {
     padding: 12px 32px;
-    background: #800000;
+    background: #007BFF;
     color: white;
     border: none;
     border-radius: 6px;
@@ -219,9 +273,9 @@
 }
 
 .submitButton:hover {
-    background: #990000;
+    background: #0056b3;
     transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(128, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
 }
 
 .submitButton:active {
@@ -261,6 +315,15 @@
     .headerLeft,
     .headerRight {
         text-align: center;
+    }
+
+    .contentBody {
+        grid-template-columns: 1fr;
+    }
+
+    .form {
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
     }
 
     .formRow {
@@ -356,7 +419,7 @@
 
 .receiptValue {
     font-size: 24px;
-    color: #800000;
+    color: #007BFF;
     font-weight: bold;
     margin: 0;
     font-family: 'Courier New', monospace;
@@ -392,14 +455,14 @@
 }
 
 .backButton {
-    background: #800000;
+    background: #007BFF;
     color: white;
 }
 
 .backButton:hover {
-    background: #990000;
+    background: #0056b3;
     transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(128, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
 }
 
 .downloadButton {

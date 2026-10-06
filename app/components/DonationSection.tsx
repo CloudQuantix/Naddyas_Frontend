@@ -33,13 +33,14 @@ export default function DonationSection() {
               <p className={styles.donationDescription}>
                 Your generous donation helps Swargumphan Sangeet Vidyalaya provide quality musical education, instruments, and performance opportunities to dedicated students. Join us in preserving and promoting our rich classical heritage.
               </p>
-              <Link href="/donors" className={styles.donationButton}>
+              <Link href="/donation" className={styles.donationButton}>
                 Make a Donation
               </Link>
             </div>
           </ScrollAnimation>
         </div>
       </div>
+      <div className={styles.donationDivider}></div>
     </section>
   )
 }

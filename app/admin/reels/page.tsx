@@ -25,6 +25,8 @@ export default function ReelsManagementPage() {
     const [title, setTitle] = useState('')
     const [student, setStudent] = useState('')
     const [instrument, setInstrument] = useState('')
+    const [videoType, setVideoType] = useState<'file' | 'youtube'>('youtube')
+    const [videoUrl, setVideoUrl] = useState('')
     const [videoFile, setVideoFile] = useState<File | null>(null)
     const [thumbnailFile, setThumbnailFile] = useState<File | null>(null)
 
@@ -33,6 +35,8 @@ export default function ReelsManagementPage() {
     const [editTitle, setEditTitle] = useState('')
     const [editStudent, setEditStudent] = useState('')
     const [editInstrument, setEditInstrument] = useState('')
+    const [editVideoType, setEditVideoType] = useState<'file' | 'youtube' | 'keep'>('keep')
+    const [editVideoUrl, setEditVideoUrl] = useState('')
     const [editVideoFile, setEditVideoFile] = useState<File | null>(null)
     const [editThumbnailFile, setEditThumbnailFile] = useState<File | null>(null)
 
@@ -67,8 +71,16 @@ export default function ReelsManagementPage() {
 
     const handleUpload = async (e: React.FormEvent) => {
         e.preventDefault()
-        if (!videoFile || !thumbnailFile || !title || !student || !instrument) {
-            alert('Please fill all fields and select both video and thumbnail files.')
+        if (!thumbnailFile || !title || !student || !instrument) {
+            alert('Please fill all fields and select a thumbnail.')
+            return
+        }
+        if (videoType === 'file' && !videoFile) {
+            alert('Please select a video file.')
+            return
+        }
+        if (videoType === 'youtube' && !videoUrl) {
+            alert('Please enter a YouTube URL.')
             return
         }
 
@@ -78,7 +90,11 @@ export default function ReelsManagementPage() {
             formData.append('title', title)
             formData.append('student', student)
             formData.append('instrument', instrument)
-            formData.append('video', videoFile)
+            if (videoType === 'file' && videoFile) {
+                formData.append('video', videoFile)
+            } else if (videoType === 'youtube' && videoUrl) {
+                formData.append('video_url', videoUrl)
+            }
             formData.append('thumbnail', thumbnailFile)
 
             const res = await fetch('/api/reels', { method: 'POST', body: formData })
@@ -89,6 +105,7 @@ export default function ReelsManagementPage() {
                 setStudent('')
                 setInstrument('')
                 setVideoFile(null)
+                setVideoUrl('')
                 setThumbnailFile(null)
                 const fileInputs = document.querySelectorAll('input[type="file"]') as NodeListOf<HTMLInputElement>
                 fileInputs.forEach((input) => { input.value = '' })
@@ -109,12 +126,16 @@ export default function ReelsManagementPage() {
         setEditTitle(reel.title)
         setEditStudent(reel.student)
         setEditInstrument(reel.instrument)
+        setEditVideoType('keep')
+        setEditVideoUrl('')
         setEditVideoFile(null)
         setEditThumbnailFile(null)
     }
 
     const closeEdit = () => {
         setEditReel(null)
+        setEditVideoType('keep')
+        setEditVideoUrl('')
         setEditVideoFile(null)
         setEditThumbnailFile(null)
     }
@@ -132,7 +153,11 @@ export default function ReelsManagementPage() {
             formData.append('title', editTitle)
             formData.append('student', editStudent)
             formData.append('instrument', editInstrument)
-            if (editVideoFile) formData.append('video', editVideoFile)
+            if (editVideoType === 'file' && editVideoFile) {
+                formData.append('video', editVideoFile)
+            } else if (editVideoType === 'youtube' && editVideoUrl) {
+                formData.append('video_url', editVideoUrl)
+            }
             if (editThumbnailFile) formData.append('thumbnail', editThumbnailFile)
 
             const res = await fetch(`/api/reels/${editReel.id}`, {
@@ -220,14 +245,38 @@ export default function ReelsManagementPage() {
                         </div>
                         <div className={styles.formGrid}>
                             <div className={styles.formGroup}>
-                                <label>Video File (MP4, MOV)</label>
-                                <input
-                                    type="file"
-                                    accept="video/*"
-                                    onChange={(e) => setVideoFile(e.target.files?.[0] || null)}
-                                    required
-                                />
+                                <label>Video Source</label>
+                                <select 
+                                    value={videoType} 
+                                    onChange={(e) => setVideoType(e.target.value as 'file' | 'youtube')}
+                                    className={styles.selectInput}
+                                >
+                                    <option value="youtube">YouTube Link</option>
+                                    <option value="file">Upload File</option>
+                                </select>
                             </div>
+                            {videoType === 'youtube' ? (
+                                <div className={styles.formGroup}>
+                                    <label>YouTube Embed URL</label>
+                                    <input
+                                        type="text"
+                                        value={videoUrl}
+                                        onChange={(e) => setVideoUrl(e.target.value)}
+                                        placeholder="e.g. https://www.youtube.com/embed/..."
+                                        required
+                                    />
+                                </div>
+                            ) : (
+                                <div className={styles.formGroup}>
+                                    <label>Video File (MP4, MOV)</label>
+                                    <input
+                                        type="file"
+                                        accept="video/*"
+                                        onChange={(e) => setVideoFile(e.target.files?.[0] || null)}
+                                        required
+                                    />
+                                </div>
+                            )}
                             <div className={styles.formGroup}>
                                 <label>Thumbnail Image</label>
                                 <input
@@ -379,13 +428,40 @@ export default function ReelsManagementPage() {
                                 />
                             </div>
                             <div className={styles.formGroup}>
-                                <label>Replace Video (optional)</label>
-                                <input
-                                    type="file"
-                                    accept="video/*"
-                                    onChange={(e) => setEditVideoFile(e.target.files?.[0] || null)}
-                                />
+                                <label>Video Source</label>
+                                <select 
+                                    value={editVideoType} 
+                                    onChange={(e) => setEditVideoType(e.target.value as 'file' | 'youtube' | 'keep')}
+                                    className={styles.selectInput}
+                                >
+                                    <option value="keep">Keep Existing Video</option>
+                                    <option value="youtube">New YouTube Link</option>
+                                    <option value="file">Upload New File</option>
+                                </select>
                             </div>
+                            {editVideoType === 'youtube' && (
+                                <div className={styles.formGroup}>
+                                    <label>YouTube Embed URL</label>
+                                    <input
+                                        type="text"
+                                        value={editVideoUrl}
+                                        onChange={(e) => setEditVideoUrl(e.target.value)}
+                                        placeholder="e.g. https://www.youtube.com/embed/..."
+                                        required
+                                    />
+                                </div>
+                            )}
+                            {editVideoType === 'file' && (
+                                <div className={styles.formGroup}>
+                                    <label>Replace Video File</label>
+                                    <input
+                                        type="file"
+                                        accept="video/*"
+                                        onChange={(e) => setEditVideoFile(e.target.files?.[0] || null)}
+                                        required
+                                    />
+                                </div>
+                            )}
                             <div className={styles.formGroup}>
                                 <label>Replace Thumbnail (optional)</label>
                                 <input

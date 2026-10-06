@@ -21,7 +21,6 @@ export default function Home() {
       <Courses />
       <SectionDivider />
       <PerformanceOpportunities />
-      <SectionDivider />
       <DonationSection />
       <SectionDivider />
       <PopularBlogs />

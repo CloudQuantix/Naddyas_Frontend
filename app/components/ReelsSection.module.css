@@ -1,5 +1,5 @@
 .reelsSection {
-  padding: 80px 0;
+  padding: 40px 0;
   background-color: var(--theme-cream-dark);
   position: relative;
   overflow: hidden;
@@ -58,15 +58,15 @@
 }
 
 .reelGridItem {
-  flex: 0 1 calc(25% - 23px);
-  max-width: 250px;
-  min-width: 220px;
+  flex: 0 1 calc(33.333% - 20px);
+  max-width: 340px;
+  min-width: 280px;
 }
 
 .reelCard {
   position: relative;
-  aspect-ratio: 9 / 16;
-  border-radius: 20px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   cursor: pointer;
@@ -288,9 +288,10 @@
 .modalContainer {
   position: relative;
   width: 100%;
-  max-width: 520px;
-  height: 90vh;
-  max-height: 800px;
+  max-width: 900px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  max-height: 90vh;
   animation: scaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   padding: 10px;
 }
@@ -314,9 +315,10 @@
 
 .reelLayout {
   display: flex;
+  flex-direction: column;
   height: 100%;
   background: #0d0d0f;
-  border-radius: 20px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -391,29 +393,29 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Sidebar Actions (Instagram style) */
+/* Sidebar Actions (Bottom bar style for YouTube) */
 .sidebarActions {
-  width: 70px;
+  width: 100%;
   background: #141416;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
-  padding: 20px 0;
+  justify-content: flex-start;
+  padding: 15px 20px;
   gap: 20px;
-  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .actionBtn {
   background: none;
   border: none;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   color: white;
   cursor: pointer;
   transition: transform 0.2s ease;
-  width: 100%;
+  gap: 8px;
 }
 
 .actionBtn:hover {
@@ -421,15 +423,14 @@
 }
 
 .actionIconContainer {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  margin-bottom: 6px;
+  font-size: 16px;
   transition: background 0.2s ease;
 }
 
@@ -464,7 +465,7 @@
 
 /* Rotating Vinyl Record */
 .vinylContainer {
-  margin-top: 10px;
+  margin-left: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -519,8 +520,8 @@
 /* Responsive Media Queries */
 @media (max-width: 992px) {
   .reelGridItem {
-    flex: 0 1 calc(50% - 13px);
-    max-width: 320px;
+    flex: 0 1 calc(50% - 15px);
+    max-width: 350px;
   }
 }
 
@@ -554,10 +555,10 @@
   }
 
   .reelGridItem {
-    flex: 0 0 250px !important;
-    width: 250px !important;
-    max-width: 250px !important;
-    min-width: 250px !important;
+    flex: 0 0 300px !important;
+    width: 300px !important;
+    max-width: 300px !important;
+    min-width: 300px !important;
     scroll-snap-align: center;
   }
 

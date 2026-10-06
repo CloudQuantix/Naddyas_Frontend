@@ -104,9 +104,6 @@ export default function ReelsSection() {
 
 
 
-  const isVideoFile = (url: string) => {
-    return url.match(/\.(mp4|mov|avi|mkv|webm)$/) || url.includes('/uploads/')
-  }
 
   return (
     <section className={styles.reelsSection}>
@@ -189,23 +186,14 @@ export default function ReelsSection() {
             <div className={styles.reelLayout}>
               {/* Main 9:16 Video Player Container */}
               <div className={styles.videoPlayerContainer}>
-                {isVideoFile(activeReel.videoUrl) ? (
-                  <video
-                    src={getMediaUrl(activeReel.videoUrl)}
-                    controls
-                    autoPlay
-                    className={styles.reelVideo}
-                  />
-                ) : (
-                  <iframe
-                    src={activeReel.videoUrl}
-                    title={activeReel.title}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    className={styles.reelIframe}
-                  ></iframe>
-                )}
+                <iframe
+                  src={activeReel.videoUrl}
+                  title={activeReel.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className={styles.reelIframe}
+                ></iframe>
 
                 {/* Overlay Text Inside Video */}
                 <div className={styles.videoOverlayDetails}>
