@@ -51,7 +51,7 @@ export default function ReelsSection() {
         const data = await res.json()
         if (data.success && data.reels && data.reels.length > 0) {
           const apiReels = data.reels
-            .filter((r: { thumbnail_url?: string; video_url?: string }) => r.thumbnail_url && r.video_url)
+            .filter((r: { thumbnail_url?: string; video_url?: string; instrument?: string }) => r.thumbnail_url && (r.video_url || (r.instrument && r.instrument.includes('|||YT:'))))
             .map((r: {
               id: number
               title: string
@@ -61,16 +61,25 @@ export default function ReelsSection() {
               likes: string | number
               thumbnail_url: string
               video_url: string
-            }) => ({
-              id: r.id,
-              title: r.title,
-              student: r.student,
-              instrument: r.instrument,
-              views: r.views,
-              likes: r.likes,
-              thumbnail: r.thumbnail_url,
-              videoUrl: r.video_url,
-            }))
+            }) => {
+              let inst = r.instrument
+              let ytUrl = r.video_url
+              if (inst && inst.includes('|||YT:')) {
+                const parts = inst.split('|||YT:')
+                inst = parts[0]
+                ytUrl = parts[1]
+              }
+              return {
+                id: r.id,
+                title: r.title,
+                student: r.student,
+                instrument: inst,
+                views: r.views,
+                likes: r.likes,
+                thumbnail: r.thumbnail_url,
+                videoUrl: ytUrl,
+              }
+            })
           setReels(apiReels)
         }
       } catch (e) {

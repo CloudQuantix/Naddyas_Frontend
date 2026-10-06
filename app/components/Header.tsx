@@ -46,7 +46,11 @@ export default function Header({ transparent = false }: { transparent?: boolean 
               <a href="https://www.youtube.com/@NnadDhyass" target="_blank" rel="noopener noreferrer" aria-label="Youtube" className={styles.socialLink}>Youtube</a>
             </div>
           </div>
-
+          <div className={styles.topBarRight}>
+            <span className={styles.topBarText}>
+              स्वरगुंफनच्या सुरेल प्रवासात सहभागी व्हा आणि संगीताच्या सुंदर विश्वात आपल्या कलेला नवी ओळख द्या.
+            </span>
+          </div>
         </div>
       </div>
       <div className={styles.navbar}>
@@ -60,7 +64,7 @@ export default function Header({ transparent = false }: { transparent?: boolean 
               className={styles.logoImage}
               priority
             />
-            <span className={styles.logoText}>SWARGUMPHAN</span>
+            <span className={styles.logoText}>स्वरगुंफन</span>
           </Link>
           <button
             className={styles.menuToggle}

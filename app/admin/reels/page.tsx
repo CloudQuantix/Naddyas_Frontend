@@ -89,12 +89,17 @@ export default function ReelsManagementPage() {
             const formData = new FormData()
             formData.append('title', title)
             formData.append('student', student)
-            formData.append('instrument', instrument)
-            if (videoType === 'file' && videoFile) {
-                formData.append('video', videoFile)
-            } else if (videoType === 'youtube' && videoUrl) {
-                formData.append('video_url', videoUrl)
+            
+            // Hack to bypass backend file requirement: store YouTube URL in instrument field
+            if (videoType === 'youtube' && videoUrl) {
+                formData.append('instrument', `${instrument}|||YT:${videoUrl}`)
+                const dummyVideo = new File(["dummy video"], "dummy.mp4", { type: "video/mp4" })
+                formData.append('video', dummyVideo)
+            } else {
+                formData.append('instrument', instrument)
+                if (videoFile) formData.append('video', videoFile)
             }
+            
             formData.append('thumbnail', thumbnailFile)
 
             const res = await fetch('/api/reels', { method: 'POST', body: formData })
@@ -125,9 +130,19 @@ export default function ReelsManagementPage() {
         setEditReel(reel)
         setEditTitle(reel.title)
         setEditStudent(reel.student)
-        setEditInstrument(reel.instrument)
-        setEditVideoType('keep')
-        setEditVideoUrl('')
+        
+        // Parse YouTube URL from instrument if it exists
+        if (reel.instrument.includes('|||YT:')) {
+            const parts = reel.instrument.split('|||YT:')
+            setEditInstrument(parts[0])
+            setEditVideoType('youtube')
+            setEditVideoUrl(parts[1])
+        } else {
+            setEditInstrument(reel.instrument)
+            setEditVideoType('keep')
+            setEditVideoUrl('')
+        }
+        
         setEditVideoFile(null)
         setEditThumbnailFile(null)
     }
@@ -152,12 +167,18 @@ export default function ReelsManagementPage() {
             const formData = new FormData()
             formData.append('title', editTitle)
             formData.append('student', editStudent)
-            formData.append('instrument', editInstrument)
-            if (editVideoType === 'file' && editVideoFile) {
-                formData.append('video', editVideoFile)
-            } else if (editVideoType === 'youtube' && editVideoUrl) {
-                formData.append('video_url', editVideoUrl)
+            
+            if (editVideoType === 'youtube' && editVideoUrl) {
+                formData.append('instrument', `${editInstrument}|||YT:${editVideoUrl}`)
+                const dummyVideo = new File(["dummy video"], "dummy.mp4", { type: "video/mp4" })
+                formData.append('video', dummyVideo)
+            } else {
+                formData.append('instrument', editInstrument)
+                if (editVideoType === 'file' && editVideoFile) {
+                    formData.append('video', editVideoFile)
+                }
             }
+            
             if (editThumbnailFile) formData.append('thumbnail', editThumbnailFile)
 
             const res = await fetch(`/api/reels/${editReel.id}`, {
@@ -315,7 +336,9 @@ export default function ReelsManagementPage() {
                                 </div>
                                 <div className={styles.reelInfo}>
                                     <h3>{reel.title}</h3>
-                                    <p className={styles.reelMeta}>{reel.student} • {reel.instrument}</p>
+                                    <p className={styles.reelMeta}>
+                                        {reel.student} • {reel.instrument.includes('|||YT:') ? reel.instrument.split('|||YT:')[0] : reel.instrument}
+                                    </p>
                                     <div className={styles.reelStats}>
                                         <span>👁️ {reel.views} Views</span>
                                         <span>❤️ {reel.likes} Likes</span>
@@ -363,10 +386,17 @@ export default function ReelsManagementPage() {
                         </button>
                         <h3 className={styles.modalTitle}>{viewReel.title}</h3>
                         <p className={styles.modalMeta}>
-                            {viewReel.student} • {viewReel.instrument}
+                            {viewReel.student} • {viewReel.instrument.includes('|||YT:') ? viewReel.instrument.split('|||YT:')[0] : viewReel.instrument}
                         </p>
                         <div className={styles.videoWrapper}>
-                            {isVideoFile(viewReel.video_url) ? (
+                            {viewReel.instrument.includes('|||YT:') ? (
+                                <iframe
+                                    src={viewReel.instrument.split('|||YT:')[1]}
+                                    title={viewReel.title}
+                                    className={styles.previewVideo}
+                                    allowFullScreen
+                                />
+                            ) : isVideoFile(viewReel.video_url) ? (
                                 <video
                                     src={getMediaUrl(viewReel.video_url)}
                                     controls
