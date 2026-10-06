@@ -18,7 +18,7 @@
 }
 
 .title {
-    color: #8b0000;
+    color: var(--theme-maroon);
     font-size: 28px;
     font-weight: bold;
     margin: 0 0 10px 0;
@@ -70,7 +70,7 @@
 
 .input:focus {
     outline: none;
-    border-color: #8b0000;
+    border-color: var(--theme-maroon);
 }
 
 .input:disabled {
@@ -79,7 +79,7 @@
 }
 
 .loginButton {
-    background: #8b0000;
+    background: var(--theme-maroon);
     color: white;
     padding: 14px;
     border: none;
@@ -108,7 +108,7 @@
 }
 
 .registerLink {
-    color: #8b0000;
+    color: var(--theme-maroon);
     text-decoration: none;
     font-weight: 600;
 }

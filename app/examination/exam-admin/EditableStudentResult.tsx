@@ -326,7 +326,7 @@ ESE (End Semester Examination) – Conducted once at the end of the academic yea
                         <button
                             type="button"
                             onClick={handlePrint}
-                            style={{ padding: '10px 20px', background: '#8b0000', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }}
+                            style={{ padding: '10px 20px', background: 'var(--theme-maroon)', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }}
                         >
                             Print / Save PDF
                         </button>

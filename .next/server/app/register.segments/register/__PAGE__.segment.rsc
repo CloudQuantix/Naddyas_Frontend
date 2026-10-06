@@ -1,7 +1,0 @@
-1:"$Sreact.fragment"
-2:I[82780,["/_next/static/chunks/3j7gci2qh4otn.js","/_next/static/chunks/1-8s9_t85wwr4.js","/_next/static/chunks/031ic4nn3d0z1.js"],"default"]
-3:I[97367,["/_next/static/chunks/3j7gci2qh4otn.js","/_next/static/chunks/1-8s9_t85wwr4.js"],"OutletBoundary"]
-4:"$Sreact.suspense"
-:HL["/_next/static/chunks/14jnoo4-u4gc2.css","style"]
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"style":{"position":"relative","minHeight":"100vh","overflow":"hidden"},"children":[["$","video",null,{"autoPlay":true,"muted":true,"loop":true,"playsInline":true,"style":{"position":"fixed","top":"50%","left":"50%","minWidth":"100%","minHeight":"100%","width":"auto","height":"auto","zIndex":-2,"transform":"translate(-50%, -50%)","objectFit":"cover"},"poster":"/admission-side.png","children":[["$","source",null,{"src":"/vid reg.mp4","type":"video/mp4"}],"Your browser does not support the video tag."]}],["$","div",null,{"style":{"position":"fixed","top":0,"left":0,"width":"100%","height":"100%","background":"radial-gradient(circle, rgba(139, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%)","zIndex":-1,"pointerEvents":"none"}}],["$","$L2",null,{}]]}],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/14jnoo4-u4gc2.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/031ic4nn3d0z1.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"GAHvZZiEm3MdJYEeIdA9X"}
-5:null

@@ -35,7 +35,7 @@ export default function Header({ transparent = false }: { transparent?: boolean 
 
   return (
     <header className={`${styles.header} ${transparent ? styles.transparent : ''}`}>
-      <div className={`${styles.topBar} ${transparent ? styles.transparentBg : ''}`}>
+      <div className={styles.topBar}>
         <div className={`container ${styles.topBarContainer}`}>
           <div className={styles.topBarLeft}>
             <a href="#faqs" className={styles.faqsLink}>FAQs</a>
@@ -49,7 +49,7 @@ export default function Header({ transparent = false }: { transparent?: boolean 
 
         </div>
       </div>
-      <div className={`${styles.navbar} ${transparent ? styles.transparentBg : ''}`}>
+      <div className={styles.navbar}>
         <div className={`container ${styles.headerContainer}`}>
           <Link href="/" className={styles.logo}>
             <Image
@@ -138,9 +138,9 @@ export default function Header({ transparent = false }: { transparent?: boolean 
                 <Link href="/donation" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Donation</Link>
                 <Link href="/examination" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Examination</Link>
                 <Link href="/gallery" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Gallery</Link>
-                <a href="#about" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>About</a>
-                <Link href="/register" className={styles.admissionBtn} onClick={() => setIsMenuOpen(false)}>Take Admission 🪈</Link>
-                <Link href="/student/login" className={styles.loginBtn} onClick={() => setIsMenuOpen(false)}>Login 🎵</Link>
+                <Link href="/about" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>About</Link>
+                <Link href="/register" className={styles.admissionBtn} onClick={() => setIsMenuOpen(false)}>Take Admission</Link>
+                <Link href="/student/login" className={styles.loginBtn} onClick={() => setIsMenuOpen(false)}>Login</Link>
                 <Link href="/" className={styles.navbarRightLogoWrapper}>
                   <Image
                     src="/nad_dhyas.png"

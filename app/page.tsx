@@ -1,10 +1,12 @@
 import Header from './components/Header'
 import HeroVideo from './components/HeroVideo'
 import Hero from './components/Hero'
+import AutoRotatingStrip from './components/AutoRotatingStrip'
 import Courses from './components/Courses'
 import PerformanceOpportunities from './components/PerformanceOpportunities'
+import PopularBlogs from './components/PopularBlogs'
 import ReelsSection from './components/ReelsSection'
-import AboutSection from './components/AboutSection'
+import SectionDivider from './components/SectionDivider'
 import Footer from './components/Footer'
 
 export default function Home() {
@@ -13,10 +15,15 @@ export default function Home() {
       <Header transparent={true} />
       <HeroVideo />
       <Hero />
+      <AutoRotatingStrip />
+      <SectionDivider />
       <Courses />
+      <SectionDivider />
       <PerformanceOpportunities />
+      <SectionDivider />
+      <PopularBlogs />
+      <SectionDivider />
       <ReelsSection />
-      <AboutSection />
       <Footer />
     </main>
   )

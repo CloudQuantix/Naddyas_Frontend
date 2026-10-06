@@ -450,10 +450,7 @@ export default function DonationPage() {
                                     className={styles.upiImage}
                                     priority
                                 />
-                                <div className={styles.upiIdContainer}>
-                                    <p className={styles.upiIdLabel}>UPI ID:</p>
-                                    <p className={styles.upiId}>krdmr011246011@yesbank</p>
-                                </div>
+
                                 <p className={styles.upiText}>Scan to make payment via UPI</p>
                             </div>
                             

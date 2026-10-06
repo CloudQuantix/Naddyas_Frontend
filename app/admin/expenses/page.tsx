@@ -675,16 +675,16 @@ export default function ExpensesPage() {
                 <style>
                     @media print { @page { margin: 10mm; size: A4 landscape; } body { margin: 0; padding: 0; } .no-print { display: none; } }
                     body { font-family: Arial, sans-serif; padding: 10px; font-size: 10px; }
-                    h1 { color: #8b0000; text-align: center; margin: 10px 0; font-size: 18px; }
+                    h1 { color: var(--theme-maroon); text-align: center; margin: 10px 0; font-size: 18px; }
                     h2 { text-align: center; margin: 5px 0; font-size: 14px; color: #333; }
                     .filter-info { text-align: center; margin: 10px 0; font-size: 9px; color: #666; }
                     table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 9px; }
-                    th { background: #8b0000; color: white; padding: 8px 4px; text-align: left; font-weight: bold; border: 1px solid #666; }
+                    th { background: var(--theme-maroon); color: white; padding: 8px 4px; text-align: left; font-weight: bold; border: 1px solid #666; }
                     td { padding: 6px 4px; border: 1px solid #ddd; }
                     tr:nth-child(even) { background: #f5f5f5; }
                     .amount { text-align: right; font-weight: bold; color: #10b981; }
                     .footer { margin-top: 20px; text-align: center; font-size: 8px; color: #999; }
-                    .no-print button { padding: 10px 20px; background: #8b0000; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 0 10px; }
+                    .no-print button { padding: 10px 20px; background: var(--theme-maroon); color: white; border: none; border-radius: 5px; cursor: pointer; margin: 0 10px; }
                 </style>
             </head>
             <body>

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import WhatsAppButton from './components/WhatsAppButton'
-import MusicalTransitions from './components/MusicalTransitions'
 
 export const metadata: Metadata = {
   title: 'Swargumphan Music Institute',
@@ -21,7 +20,6 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
       </head>
       <body suppressHydrationWarning>
-        <MusicalTransitions />
         {children}
         <WhatsAppButton />
       </body>

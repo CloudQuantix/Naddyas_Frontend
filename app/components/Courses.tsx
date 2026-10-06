@@ -139,10 +139,10 @@ export default function Courses() {
 
 
   return (
-    <section className="section" id="courses" style={{ background: '#2c2c2c', padding: '30px 0 20px 0' }}>
+    <section className="section" id="courses" style={{ background: '#ffffff', padding: '30px 0 20px 0' }}>
       <div className="container">
         <ScrollAnimation animationType="fadeInUp" delay={0.2}>
-          <h2 className="section-title" style={{ color: 'white', textAlign: 'center', marginBottom: '30px' }}>
+          <h2 className="section-title" style={{ color: 'var(--theme-maroon)', textAlign: 'center', marginBottom: '30px' }}>
             Our Courses
           </h2>
         </ScrollAnimation>
@@ -171,7 +171,7 @@ export default function Courses() {
                   <p className={styles.courseDescription}>{category.description}</p>
                   <Link href="/register" className={styles.enrollLink}>
                     <button className={styles.enrollButton}>
-                      Enroll Now <span className={styles.btnNote}>🎹</span>
+                      Enroll Now
                     </button>
                   </Link>
                 </div>
@@ -180,7 +180,6 @@ export default function Courses() {
           </div>
         </div>
       </div>
-      <div className={styles.coursesDivider}></div>
     </section>
   )
 }

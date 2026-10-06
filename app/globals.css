@@ -14,13 +14,13 @@
   --text-gray: #666666;
   --shadow: rgba(0, 0, 0, 0.1);
 
-  /* New Theme Palette */
-  --theme-maroon: #6b0504;
-  --theme-maroon-dark: #4a0302;
-  --theme-gold: #c5a059;
-  --theme-gold-light: #e6c887;
-  --theme-cream: #fdf8e7;
-  --theme-cream-dark: #f0e6d2;
+  /* New Theme Palette (Blue & White) */
+  --theme-maroon: #1A365D;       /* Navy Blue */
+  --theme-maroon-dark: #0F172A;  /* Very Dark Blue */
+  --theme-gold: #60A5FA;         /* Light Blue Accent */
+  --theme-gold-light: #E0F2FE;   /* Pale Blue Accent */
+  --theme-cream: #FFFFFF;        /* Pure White */
+  --theme-cream-dark: #F8FAFC;   /* Slate 50 */
 }
 
 body {

@@ -35,14 +35,6 @@ export default function VisitorCounter() {
 
     return (
         <div className={styles.counterWrapper}>
-            <div className={styles.equalizer}>
-                <div className={styles.bar}></div>
-                <div className={styles.bar}></div>
-                <div className={styles.bar}></div>
-                <div className={styles.bar}></div>
-                <div className={styles.bar}></div>
-            </div>
-
             <div className={styles.textContainer}>
                 <span className={styles.numbers}>
                     {count.toString().padStart(6, '0')}
@@ -50,10 +42,6 @@ export default function VisitorCounter() {
                 <span className={styles.label}>
                     Total Visitors
                 </span>
-            </div>
-
-            <div className={styles.iconContainer}>
-                🎵
             </div>
         </div>
     );

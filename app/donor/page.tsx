@@ -32,7 +32,7 @@ export default function DonorPage() {
                 left: 0,
                 width: '100%',
                 height: 100 + '%',
-                background: 'radial-gradient(circle, rgba(139, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%)',
+                background: 'radial-gradient(circle, rgba(26, 54, 93, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%)',
                 zIndex: -1,
                 pointerEvents: 'none'
             }}></div>

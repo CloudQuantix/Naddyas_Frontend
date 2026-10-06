@@ -54,11 +54,12 @@
   justify-content: center;
   align-items: stretch;
   gap: 30px;
+  padding: 20px 0;
 }
 
 .reelGridItem {
   flex: 0 1 calc(25% - 23px);
-  max-width: 280px;
+  max-width: 250px;
   min-width: 220px;
 }
 
@@ -517,15 +518,19 @@
   }
 
   .reelsGrid {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    overflow-x: auto;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
     scroll-snap-type: x mandatory;
-    gap: 20px;
-    padding: 10px max(15px, calc(50% - 125px)) 30px;
-    margin: 0 -15px;
+    gap: 20px !important;
+    padding: 10px 20px 30px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    -ms-overflow-style: none;
   }
 
   .reelsGrid::-webkit-scrollbar {
@@ -533,9 +538,10 @@
   }
 
   .reelGridItem {
-    flex: 0 0 250px;
-    max-width: 250px;
-    min-width: 250px;
+    flex: 0 0 250px !important;
+    width: 250px !important;
+    max-width: 250px !important;
+    min-width: 250px !important;
     scroll-snap-align: center;
   }
 

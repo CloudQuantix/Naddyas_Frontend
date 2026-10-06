@@ -103,7 +103,7 @@ export default function AdmissionFormPage() {
                         display: flex;
                         justify-content: space-between;
                         align-items: flex-start;
-                        border-bottom: 2px solid #8b0000;
+                        border-bottom: 2px solid var(--theme-maroon);
                         padding-bottom: 8px;
                         margin-bottom: 10px;
                     }
@@ -111,7 +111,7 @@ export default function AdmissionFormPage() {
                         text-align: left;
                     }
                     .header-left h1 {
-                        color: #8b0000;
+                        color: var(--theme-maroon);
                         margin: 0 0 2px 0;
                         font-size: 16px;
                         font-weight: bold;
@@ -127,7 +127,7 @@ export default function AdmissionFormPage() {
                         text-align: right;
                     }
                     .header-right h2 {
-                        color: #8b0000;
+                        color: var(--theme-maroon);
                         margin: 0;
                         font-size: 16px;
                         font-weight: bold;
@@ -143,8 +143,8 @@ export default function AdmissionFormPage() {
                         page-break-inside: avoid;
                     }
                     .form-section h3 {
-                        color: #8b0000;
-                        border-bottom: 1.5px solid #8b0000;
+                        color: var(--theme-maroon);
+                        border-bottom: 1.5px solid var(--theme-maroon);
                         padding-bottom: 3px;
                         margin-bottom: 6px;
                         font-size: 11px;
@@ -271,7 +271,7 @@ export default function AdmissionFormPage() {
                     }
                     .no-print button {
                         padding: 10px 20px;
-                        background: #8b0000;
+                        background: var(--theme-maroon);
                         color: white;
                         border: none;
                         border-radius: 5px;

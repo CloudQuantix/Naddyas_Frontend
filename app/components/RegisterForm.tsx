@@ -229,7 +229,7 @@ export default function RegisterForm() {
                         display: flex;
                         justify-content: space-between;
                         align-items: flex-start;
-                        border-bottom: 2px solid #8b0000;
+                        border-bottom: 2px solid var(--theme-maroon);
                         padding-bottom: 8px;
                         margin-bottom: 10px;
                     }
@@ -237,7 +237,7 @@ export default function RegisterForm() {
                         text-align: left;
                     }
                     .header-left h1 {
-                        color: #8b0000;
+                        color: var(--theme-maroon);
                         margin: 0 0 2px 0;
                         font-size: 16px;
                         font-weight: bold;
@@ -253,7 +253,7 @@ export default function RegisterForm() {
                         text-align: right;
                     }
                     .header-right h2 {
-                        color: #8b0000;
+                        color: var(--theme-maroon);
                         margin: 0;
                         font-size: 16px;
                         font-weight: bold;
@@ -269,8 +269,8 @@ export default function RegisterForm() {
                         page-break-inside: avoid;
                     }
                     .form-section h3 {
-                        color: #8b0000;
-                        border-bottom: 1.5px solid #8b0000;
+                        color: var(--theme-maroon);
+                        border-bottom: 1.5px solid var(--theme-maroon);
                         padding-bottom: 3px;
                         margin-bottom: 6px;
                         font-size: 11px;
@@ -397,7 +397,7 @@ export default function RegisterForm() {
                     }
                     .no-print button {
                         padding: 10px 20px;
-                        background: #8b0000;
+                        background: var(--theme-maroon);
                         color: white;
                         border: none;
                         border-radius: 5px;
@@ -657,7 +657,7 @@ export default function RegisterForm() {
                         </div>
 
                         <div className={styles.formGroup}>
-                            <label className={styles.label}>Full Name <span style={{ color: '#ff3333' }}>*</span></label>
+                            <label className={styles.label}>Full Name <span style={{ color: 'var(--theme-gold)' }}>*</span></label>
                             <input
                                 type="text"
                                 name="name"
@@ -669,7 +669,7 @@ export default function RegisterForm() {
                         </div>
 
                         <div className={styles.formGroup}>
-                            <label className={styles.label}>Address <span style={{ color: '#ff3333' }}>*</span></label>
+                            <label className={styles.label}>Address <span style={{ color: 'var(--theme-gold)' }}>*</span></label>
                             <input
                                 type="text"
                                 name="address"
@@ -681,7 +681,7 @@ export default function RegisterForm() {
                         </div>
 
                         <div className={styles.formGroup}>
-                            <label className={styles.label}>Mobile <span style={{ color: '#ff3333' }}>*</span></label>
+                            <label className={styles.label}>Mobile <span style={{ color: 'var(--theme-gold)' }}>*</span></label>
                             <div className={styles.phoneInputs}>
                                 {formData.phone.map((digit, index) => (
                                     <input
@@ -700,7 +700,7 @@ export default function RegisterForm() {
                         <div className={styles.row}>
                             <div className={styles.col}>
                                 <div className={styles.formGroup}>
-                                    <label className={styles.label}>Date of Birth <span style={{ color: '#ff3333' }}>*</span></label>
+                                    <label className={styles.label}>Date of Birth <span style={{ color: 'var(--theme-gold)' }}>*</span></label>
                                     <input
                                         type="date"
                                         name="dob"
@@ -713,7 +713,7 @@ export default function RegisterForm() {
                             </div>
                             <div className={styles.col}>
                                 <div className={styles.formGroup}>
-                                    <label className={styles.label}>Age <span style={{ color: '#ff3333' }}>*</span></label>
+                                    <label className={styles.label}>Age <span style={{ color: 'var(--theme-gold)' }}>*</span></label>
                                     <input
                                         type="number"
                                         name="age"
@@ -738,7 +738,7 @@ export default function RegisterForm() {
                         </div>
 
                         <div className={styles.formGroup}>
-                            <label className={styles.label}>PAN Card <span style={{ color: '#ff3333' }}>*</span></label>
+                            <label className={styles.label}>PAN Card <span style={{ color: 'var(--theme-gold)' }}>*</span></label>
                             <input
                                 type="text"
                                 name="panCard"
@@ -753,7 +753,7 @@ export default function RegisterForm() {
                         </div>
 
                         <div className={styles.formGroup}>
-                            <label className={styles.label}>Aadhar Card <span style={{ color: '#ff3333' }}>*</span></label>
+                            <label className={styles.label}>Aadhar Card <span style={{ color: 'var(--theme-gold)' }}>*</span></label>
                             <input
                                 type="text"
                                 name="aadharCard"
@@ -794,7 +794,7 @@ export default function RegisterForm() {
                                             maxWidth: '150px', 
                                             maxHeight: '150px', 
                                             borderRadius: '8px',
-                                            border: '2px solid #ff3333',
+                                            border: '2px solid var(--theme-gold)',
                                             objectFit: 'cover'
                                         }} 
                                     />
@@ -862,7 +862,7 @@ export default function RegisterForm() {
                         <h3 className={styles.sectionTitle}>Diploma Admission Year</h3>
 
                         <div className={styles.formGroup}>
-                            <label className={styles.label}>Year <span style={{ color: '#ff3333' }}>*</span></label>
+                            <label className={styles.label}>Year <span style={{ color: 'var(--theme-gold)' }}>*</span></label>
                             <select
                                 name="diplomaAdmissionYear"
                                 value={formData.diplomaAdmissionYear}
@@ -889,7 +889,7 @@ export default function RegisterForm() {
                         </div>
 
                         <div className={styles.formGroup}>
-                            <label className={styles.label}>Joining Date <span style={{ color: '#ff3333' }}>*</span></label>
+                            <label className={styles.label}>Joining Date <span style={{ color: 'var(--theme-gold)' }}>*</span></label>
                             <input
                                 type="date"
                                 name="joiningDate"
@@ -914,14 +914,10 @@ export default function RegisterForm() {
                                     alt="UPI QR Code" 
                                     className={styles.qrImage}
                                 />
-                                <div className={styles.upiId}>
-                                    UPI ID: swargumphan@upi
-                                </div>
-                                <p style={{ color: '#666', fontSize: '0.9rem' }}>Scan with PhonePe / GPay / Paytm</p>
                             </div>
 
                             <div className={styles.formGroup}>
-                                <label className={styles.label}>UPI ID <span style={{ color: '#ff3333' }}>*</span></label>
+                                <label className={styles.label}>UPI ID <span style={{ color: 'var(--theme-gold)' }}>*</span></label>
                                 <input
                                     type="text"
                                     name="transactionId"
@@ -979,7 +975,7 @@ export default function RegisterForm() {
                                     }
                                 }}
                                 className={styles.submitBtn}
-                                style={{ backgroundColor: '#ff3333' }}
+                                style={{ backgroundColor: 'var(--theme-gold)' }}
                             >
                                 📄 Download Admission Form (PDF)
                             </button>

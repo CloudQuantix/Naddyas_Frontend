@@ -138,13 +138,13 @@ export default function StudentExamFormPage() {
                 <style>
                     @media print { @page { margin: 8mm; size: A4; } body { margin: 0; padding: 0; } .no-print { display: none; } * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
                     body { font-family: Arial, sans-serif; padding: 8px; color: #000; background: white; font-size: 10px; line-height: 1.2; }
-                    .header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #8b0000; padding-bottom: 8px; margin-bottom: 10px; }
-                    .header-left h1 { color: #8b0000; margin: 0 0 2px 0; font-size: 16px; font-weight: bold; }
+                    .header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--theme-maroon); padding-bottom: 8px; margin-bottom: 10px; }
+                    .header-left h1 { color: var(--theme-maroon); margin: 0 0 2px 0; font-size: 16px; font-weight: bold; }
                     .header-left p { margin: 1px 0; font-size: 9px; color: #333; }
-                    .header-right h2 { color: #8b0000; margin: 0; font-size: 16px; font-weight: bold; }
+                    .header-right h2 { color: var(--theme-maroon); margin: 0; font-size: 16px; font-weight: bold; }
                     .header-right p { margin: 3px 0 0 0; font-size: 9px; color: #333; }
                     .form-section { margin-bottom: 8px; page-break-inside: avoid; }
-                    .form-section h3 { color: #8b0000; border-bottom: 1.5px solid #8b0000; padding-bottom: 3px; margin-bottom: 6px; font-size: 11px; font-weight: bold; }
+                    .form-section h3 { color: var(--theme-maroon); border-bottom: 1.5px solid var(--theme-maroon); padding-bottom: 3px; margin-bottom: 6px; font-size: 11px; font-weight: bold; }
                     .info-table { width: 100%; border-collapse: collapse; font-size: 9px; }
                     .info-table td { padding: 4px 6px; border: 1px solid #ddd; line-height: 1.2; }
                     .info-table td:first-child { width: 28%; font-weight: bold; }
@@ -161,7 +161,7 @@ export default function StudentExamFormPage() {
                     .signature-row .sig-label { font-size: 9px; color: #333; font-weight: bold; }
                     .footer { margin-top: 10px; text-align: center; font-size: 8px; color: #666; border-top: 1px solid #ddd; padding-top: 5px; }
                     .no-print { text-align: center; margin-top: 20px; }
-                    .no-print button { padding: 10px 20px; background: #8b0000; color: white; border: none; border-radius: 5px; font-size: 14px; cursor: pointer; margin: 0 10px; }
+                    .no-print button { padding: 10px 20px; background: var(--theme-maroon); color: white; border: none; border-radius: 5px; font-size: 14px; cursor: pointer; margin: 0 10px; }
                 </style>
             </head>
             <body>
@@ -588,8 +588,6 @@ export default function StudentExamFormPage() {
                             <div className={styles.amountDisplay}>Amount to Pay: ₹{EXAM_FEE_AMOUNT}</div>
                             <div className={styles.qrContainer}>
                                 <img src="/UPI.png" alt="UPI QR Code" className={styles.qrImage} />
-                                <div className={styles.upiId}>UPI ID: swargumphan@upi</div>
-                                <p className={styles.qrHint}>Scan with PhonePe / GPay / Paytm</p>
                             </div>
                             <div className={styles.field}>
                                 <label htmlFor="transactionId">UPI ID / Transaction ID <span className={styles.required}>*</span></label>

@@ -1,5 +1,4 @@
 import ScrollAnimation from './ScrollAnimation'
-import StatsBanner from './StatsBanner'
 import styles from './Hero.module.css'
 
 export default function Hero() {
@@ -9,7 +8,6 @@ export default function Hero() {
         <div className={styles.heroContent}>
           <ScrollAnimation animationType="fadeInLeft" delay={0.2}>
             <div className={styles.heroText}>
-              <StatsBanner />
               <h1 className={styles.heroTitle}>Learn Music. Anytime. Anywhere.</h1>
               <p className={styles.heroSubtitle}>
                 Live, online classes with expert faculty, personalized learning and world class curriculum for all age groups.

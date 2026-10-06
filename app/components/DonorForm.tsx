@@ -218,10 +218,6 @@ export default function DonorForm() {
                                 <div className={styles.qrPlaceholder}>
                                     QR CODE
                                 </div>
-                                <div className={styles.upiId}>
-                                    UPI ID: swargumphan@upi
-                                </div>
-                                <p style={{ color: '#666', fontSize: '0.9rem' }}>Scan with PhonePe / GPay / Paytm</p>
                             </div>
 
                             <div className={styles.formGroup}>

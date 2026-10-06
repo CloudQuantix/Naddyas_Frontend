@@ -112,7 +112,10 @@ export default function Footer() {
 
 
         <div className={styles.footerBottom}>
-          <p>&copy; 2025 Swargumphan Music Institute. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Swargumphan Music Institute. All rights reserved.</p>
+          <p className={styles.designerCredits}>
+            Designed by <a href="https://cloudquantix.com" target="_blank" rel="noopener noreferrer">CloudQuantix</a>
+          </p>
         </div>
 
       </div>

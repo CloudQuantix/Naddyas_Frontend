@@ -468,7 +468,7 @@ export default function AdminInvoicesPage() {
                         font-size: 10px;
                     }
                     h1 {
-                        color: #8b0000;
+                        color: var(--theme-maroon);
                         text-align: center;
                         margin: 10px 0;
                         font-size: 18px;
@@ -492,7 +492,7 @@ export default function AdminInvoicesPage() {
                         font-size: 9px;
                     }
                     th {
-                        background: #8b0000;
+                        background: var(--theme-maroon);
                         color: white;
                         padding: 8px 4px;
                         text-align: left;
@@ -525,7 +525,7 @@ export default function AdminInvoicesPage() {
                     }
                     .no-print button {
                         padding: 10px 20px;
-                        background: #8b0000;
+                        background: var(--theme-maroon);
                         color: white;
                         border: none;
                         border-radius: 5px;
