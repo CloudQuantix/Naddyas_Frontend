@@ -55,26 +55,49 @@ export default function Header({ transparent = false }: { transparent?: boolean 
       </div>
       <div className={styles.navbar}>
         <div className={`container ${styles.headerContainer}`}>
-          <Link href="/" className={styles.logo}>
-            <Image
-              src="/Logo2.png"
-              alt="Logo"
-              width={100}
-              height={100}
-              className={styles.logoImage}
-              priority
-            />
-            <span className={styles.logoText}>स्वरगुंफन</span>
-          </Link>
-          <button
-            className={styles.menuToggle}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+          
+          <div className={styles.navTopRow}>
+            <Link href="/" className={styles.logo}>
+              <Image
+                src="/Logo2.png"
+                alt="Logo"
+                width={70}
+                height={70}
+                className={styles.logoImage}
+                priority
+              />
+              <div className={styles.logoTextWrapper}>
+                <span className={styles.logoText}>Swargumphan</span>
+                <span className={styles.logoSubtext}>Music Institute</span>
+              </div>
+            </Link>
+
+            <div className={styles.searchContainer}>
+              <button className={styles.searchIconBtn}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </button>
+              <input type="text" placeholder="Search courses, events..." className={styles.searchInput} />
+            </div>
+            
+            <div className={styles.actionButtonsDesktop}>
+              <Link href="/student/login" className={styles.loginBtn}>Login</Link>
+              <a href="#online-courses" className={styles.onlineCoursesBtn}>Online Courses</a>
+              <Link href="/register" className={styles.admissionBtn}>Take Admission</Link>
+            </div>
+
+            <button
+              className={styles.menuToggle}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
 
           {isMenuOpen && (
             <div
@@ -82,6 +105,7 @@ export default function Header({ transparent = false }: { transparent?: boolean 
               onClick={() => setIsMenuOpen(false)}
             ></div>
           )}
+          
           <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
             <button
               className={styles.closeButton}
@@ -122,39 +146,17 @@ export default function Header({ transparent = false }: { transparent?: boolean 
             ) : (
               <>
                 <Link href="/" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Home</Link>
-                <div
-                  className={styles.dropdown}
-                  onMouseEnter={() => setIsCoursesOpen(true)}
-                  onMouseLeave={() => setIsCoursesOpen(false)}
-                >
-                  <a href="#courses" className={styles.navLink} onClick={() => setIsCoursesOpen(!isCoursesOpen)}>
-                    Courses
-                    <span className={styles.dropdownArrow}>▼</span>
-                  </a>
-                  {isCoursesOpen && (
-                    <div className={styles.dropdownMenu}>
-                      <a href="#online-courses" className={styles.dropdownItem} onClick={() => setIsMenuOpen(false)}>Online Courses</a>
-                      <a href="#offline-courses" className={styles.dropdownItem} onClick={() => setIsMenuOpen(false)}>Offline Courses</a>
-                    </div>
-                  )}
-                </div>
                 <a href="#events" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Events</a>
                 <Link href="/donation" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Donation</Link>
                 <Link href="/examination" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Examination</Link>
                 <Link href="/gallery" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Gallery</Link>
                 <Link href="/about" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>About</Link>
-                <Link href="/register" className={styles.admissionBtn} onClick={() => setIsMenuOpen(false)}>Take Admission</Link>
-                <Link href="/student/login" className={styles.loginBtn} onClick={() => setIsMenuOpen(false)}>Login</Link>
-                <Link href="/" className={styles.navbarRightLogoWrapper}>
-                  <Image
-                    src="/nad_dhyas.png"
-                    alt="Nad Dhyas Logo"
-                    width={75}
-                    height={75}
-                    className={styles.navbarRightLogo}
-                    priority
-                  />
-                </Link>
+                
+                <div className={styles.actionButtonsMobile}>
+                  <Link href="/student/login" className={styles.loginBtn} onClick={() => setIsMenuOpen(false)}>Login</Link>
+                  <a href="#online-courses" className={styles.onlineCoursesBtn} onClick={() => setIsMenuOpen(false)}>Online Courses</a>
+                  <Link href="/register" className={styles.admissionBtn} onClick={() => setIsMenuOpen(false)}>Take Admission</Link>
+                </div>
               </>
             )}
           </nav>
