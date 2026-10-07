@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     type: 'website',
   },
+  icons: {
+    icon: '/fevicon.png',
+  },
   twitter: {
     card: 'summary_large_image',
     title: 'Best Music Class in Satara | Swargumphan Music Institute',
