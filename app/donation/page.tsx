@@ -615,7 +615,7 @@ export default function DonationPage() {
                             <p className={styles.upiText}>Scan with any UPI app to make a donation</p>
                             <div className={styles.upiIdBadge}>
                                 <span>UPI ID:</span>
-                                <strong>swargumphan@upi</strong>
+                                <strong>bom260801351835@mahb</strong>
                             </div>
                         </div>
                         <div className={styles.qrBenefits}>
