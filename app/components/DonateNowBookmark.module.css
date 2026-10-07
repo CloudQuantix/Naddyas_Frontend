@@ -1,0 +1,60 @@
+.bookmarkContainer {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.bookmark {
+  padding: 15px 5px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 8px 0 0 8px;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  letter-spacing: 2px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.bookmark:hover {
+  padding-right: 15px;
+  box-shadow: -6px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.admissionBookmark {
+  background-color: var(--theme-gold, #FFD700);
+  color: #000;
+}
+
+.admissionBookmark:hover {
+  background-color: #FFE44D;
+}
+
+.donateBookmark {
+  background-color: var(--theme-maroon, #800000);
+  color: #ffffff;
+}
+
+.donateBookmark:hover {
+  background-color: #990000;
+}
+
+@media (max-width: 768px) {
+  .bookmarkContainer {
+    gap: 10px;
+  }
+  .bookmark {
+    padding: 12px 4px;
+    font-size: 0.9rem;
+  }
+}

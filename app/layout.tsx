@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import WhatsAppButton from './components/WhatsAppButton'
+import ScrollToTop from './components/ScrollToTop'
+import DonateNowBookmark from './components/DonateNowBookmark'
 
 export const metadata: Metadata = {
   title: 'Swargumphan Music Institute',
@@ -22,6 +24,8 @@ export default function RootLayout({
       <body suppressHydrationWarning>
         {children}
         <WhatsAppButton />
+        <ScrollToTop />
+        <DonateNowBookmark />
       </body>
     </html>
   )

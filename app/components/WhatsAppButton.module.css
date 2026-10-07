@@ -1,6 +1,6 @@
 .whatsappButton {
   position: fixed;
-  bottom: 30px;
+  bottom: 90px;
   right: 30px;
   width: 60px;
   height: 60px;
@@ -33,7 +33,7 @@
 
 @media (max-width: 768px) {
   .whatsappButton {
-    bottom: 20px;
+    bottom: 80px;
     right: 20px;
     width: 55px;
     height: 55px;

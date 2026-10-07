@@ -359,6 +359,10 @@
     gap: 8px;
   }
 
+  .topBarText {
+    display: none;
+  }
+
   .separator {
     display: none;
   }
