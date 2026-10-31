@@ -1,0 +1,519 @@
+.main {
+    min-height: 100vh;
+    background: #f5f5f5;
+    padding-bottom: 40px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.formCard {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid #007BFF;
+    padding: 30px 40px;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+}
+
+.headerLeft {
+    text-align: left;
+}
+
+.headerRight {
+    text-align: right;
+}
+
+.title {
+    color: #007BFF;
+    margin: 0 0 8px 0;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.address {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.4;
+}
+
+.receiptTitle {
+    color: #007BFF;
+    margin: 0 0 12px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.receiptNo {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.receiptNo strong {
+    color: #007BFF;
+    font-weight: 600;
+}
+
+/* Form Section */
+.contentBody {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 0;
+}
+
+.form {
+    padding: 40px;
+    border-right: 1px solid #e5e7eb;
+}
+
+.formSection {
+    margin-bottom: 30px;
+}
+
+.sectionTitle {
+    color: #007BFF;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+/* UPI & QR Section */
+.qrSection {
+    padding: 40px;
+    background: #fffdf8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qrHeader {
+    color: #007BFF;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.upiContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    border: 2px solid #007BFF;
+    box-shadow: 0 8px 24px rgba(0, 123, 255, 0.1);
+    position: relative;
+}
+
+.upiImage {
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.upiText {
+    margin-top: 15px;
+    font-size: 15px;
+    color: #4b5563;
+    font-weight: 500;
+    text-align: center;
+}
+
+.upiIdBadge {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #007BFF;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+
+.upiIdBadge span {
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+.upiIdBadge strong {
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+.qrBenefits {
+    width: 100%;
+    margin-top: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #007BFF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.qrBenefits h4 {
+    color: #007BFF;
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.qrBenefits ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.qrBenefits li {
+    color: #4b5563;
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 8px;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: inherit;
+    transition: all 0.2s;
+    background: #fff;
+    color: #111827;
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.input:disabled {
+    background: #f3f4f6;
+    color: #6b7280;
+    cursor: not-allowed;
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.helpText {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* Form Actions */
+.formActions {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.submitButton {
+    padding: 12px 32px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.submitButton:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.submitButton:active {
+    transform: translateY(0);
+}
+
+.resetButton {
+    padding: 12px 32px;
+    background: #6b7280;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.resetButton:hover {
+    background: #4b5563;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(107, 114, 128, 0.3);
+}
+
+.resetButton:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .headerLeft,
+    .headerRight {
+        text-align: center;
+    }
+
+    .contentBody {
+        grid-template-columns: 1fr;
+    }
+
+    .form {
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+    }
+
+    .form {
+        padding: 30px 20px;
+    }
+
+    .formActions {
+        flex-direction: column;
+    }
+
+    .submitButton,
+    .resetButton {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    .header {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .receiptTitle {
+        font-size: 20px;
+    }
+}
+
+/* Success Page Styles */
+.successCard {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 60px 40px;
+    text-align: center;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.successIcon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.successTitle {
+    color: #10b981;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+}
+
+.successMessage {
+    font-size: 18px;
+    color: #374151;
+    margin: 0 0 30px 0;
+    line-height: 1.6;
+}
+
+.receiptInfo {
+    background: #f3f4f6;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px 0;
+    border: 2px solid #e5e7eb;
+}
+
+.receiptLabel {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0 0 8px 0;
+    font-weight: 600;
+}
+
+.receiptValue {
+    font-size: 24px;
+    color: #007BFF;
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Courier New', monospace;
+}
+
+.successNote {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 30px 0;
+    line-height: 1.6;
+}
+
+.successActions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.backButton,
+.homeButton,
+.downloadButton {
+    padding: 14px 32px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.backButton {
+    background: #007BFF;
+    color: white;
+}
+
+.backButton:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.downloadButton {
+    background: #10b981;
+    color: white;
+}
+
+.downloadButton:hover {
+    background: #059669;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+}
+
+.homeButton {
+    background: #3b82f6;
+    color: white;
+}
+
+.homeButton:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+@media (max-width: 768px) {
+    .successCard {
+        padding: 40px 30px;
+        margin: 20px auto;
+    }
+
+    .successIcon {
+        width: 80px;
+        height: 80px;
+        font-size: 50px;
+    }
+
+    .successTitle {
+        font-size: 24px;
+    }
+
+    .successMessage {
+        font-size: 16px;
+    }
+
+    .successActions {
+        flex-direction: column;
+    }
+
+    .backButton,
+    .homeButton,
+    .downloadButton {
+        width: 100%;
+    }
+}

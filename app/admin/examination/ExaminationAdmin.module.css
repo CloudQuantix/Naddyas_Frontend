@@ -1,0 +1,606 @@
+.container {
+  padding: 20px;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Exam_Admin: left sidebar (aligned with main admin sidebar look) + main */
+.examAdminLayout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0;
+  margin-top: 8px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.examAdminSideNav {
+  flex-shrink: 0;
+  width: 260px;
+  background: linear-gradient(180deg, var(--theme-maroon) 0%, var(--theme-maroon) 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  min-height: min(520px, 70vh);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 80px;
+}
+
+.examAdminSideHeader {
+  padding: 18px 16px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.examAdminSideBrand h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.examAdminSideBrand p {
+  margin: 4px 0 0 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.2;
+}
+
+.examAdminNavList {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0 16px;
+  flex: 1;
+}
+
+.examAdminNavList li {
+  margin: 0;
+  padding: 0;
+}
+
+.examAdminNavBtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin: 0;
+  padding: 12px 18px;
+  border: none;
+  border-left: 3px solid transparent;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.examAdminNavBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.examAdminNavBtnActive {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-left-color: #60a5fa;
+  font-weight: 600;
+}
+
+.examAdminNavIcon {
+  width: 22px;
+  flex-shrink: 0;
+}
+
+.examAdminMain {
+  flex: 1;
+  min-width: 0;
+  background: #f5f5f5;
+  padding: 16px 20px 24px;
+}
+
+@media (max-width: 900px) {
+  .examAdminLayout {
+    flex-direction: column;
+    border-radius: 12px;
+  }
+
+  .examAdminSideNav {
+    width: 100%;
+    min-height: 0;
+    position: static;
+    flex-direction: column;
+  }
+
+  .examAdminNavList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 8px 10px 12px;
+  }
+
+  .examAdminNavList li {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .examAdminNavBtn {
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    justify-content: center;
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  .examAdminNavBtnActive {
+    border-left: none;
+    border-bottom-color: #60a5fa;
+  }
+
+  .examAdminNavIcon {
+    display: none;
+  }
+
+  .examAdminMain {
+    padding: 12px 14px 20px;
+  }
+}
+
+.header {
+  margin-bottom: 28px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 8px 0;
+}
+
+.header p {
+  color: #666;
+  margin: 0;
+  font-size: 14px;
+}
+
+.loading,
+.error,
+.success {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.error {
+  background: #fee;
+  color: #c00;
+}
+.success {
+  background: #efe;
+  color: #0a0;
+}
+
+/* Section 1: Examination Info */
+.section {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 8px 0;
+}
+
+.sectionDesc {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 16px 0;
+  line-height: 1.4;
+}
+
+.addBtn {
+  background: #800000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.addBtn:hover {
+  background: #600000;
+}
+
+.noItems {
+  color: #888;
+  font-size: 14px;
+  margin: 0;
+}
+
+.reorderHint {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 12px 0;
+}
+
+.itemList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.itemCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background: #fafafa;
+  cursor: grab;
+  transition: box-shadow 0.15s, opacity 0.15s;
+}
+.itemCard:active {
+  cursor: grabbing;
+}
+.itemCardDragging {
+  opacity: 0.6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.itemCardDragOver {
+  border-color: #800000;
+  box-shadow: 0 0 0 2px rgba(128, 0, 0, 0.2);
+  background: #fff8f8;
+}
+
+.itemDragHandle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  padding-right: 8px;
+  border-right: 1px solid #eee;
+  margin-right: 8px;
+  color: #888;
+  user-select: none;
+}
+.dragIcon {
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+.itemOrder {
+  font-size: 12px;
+  font-weight: 600;
+  color: #800000;
+  min-width: 20px;
+  text-align: center;
+}
+
+.itemContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.itemTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 6px 0;
+}
+
+.itemDate {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 6px 0;
+}
+
+.itemPreview {
+  font-size: 13px;
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.itemActions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.editBtn {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.editBtn:hover {
+  background: #222;
+}
+
+.deleteBtn {
+  background: #c00;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.deleteBtn:hover:not(:disabled) {
+  background: #a00;
+}
+.deleteBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Section 2: Toggle */
+.toggleSection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.toggleLabel {
+  font-weight: 500;
+  color: #333;
+  font-size: 15px;
+}
+
+.toggleGroup {
+  display: flex;
+  border: 2px solid #800000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.toggleBtn {
+  padding: 10px 24px;
+  border: none;
+  background: white;
+  color: #800000;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.toggleBtn:hover:not(:disabled) {
+  background: #f5e6e6;
+}
+.toggleBtn.toggleBtnActive {
+  background: #800000;
+  color: white;
+}
+.toggleBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 24px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modalTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 20px 0;
+}
+
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+}
+
+.field input[type="text"],
+.field input[type="date"],
+.field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: #800000;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.cancelBtn {
+  background: #eee;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.cancelBtn:hover {
+  background: #ddd;
+}
+
+.submitBtn {
+  background: #800000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.submitBtn:hover:not(:disabled) {
+  background: #600000;
+}
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Student / exam form statistics (Exam_Admin) */
+.statsSectionHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.statsSectionHead .sectionTitle {
+  margin-bottom: 0;
+}
+
+.statsRefreshBtn {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.statsRefreshBtn:hover:not(:disabled) {
+  background: #555;
+}
+
+.statsRefreshBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.statsSummary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.statsSummaryCard {
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.statsSummaryValue {
+  font-size: 26px;
+  font-weight: 700;
+  color: #800000;
+  line-height: 1.2;
+}
+
+.statsSummaryLabel {
+  font-size: 12px;
+  color: #666;
+  margin-top: 6px;
+  line-height: 1.35;
+}
+
+.statsTableWrap {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+}
+
+.statsTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.statsTable th,
+.statsTable td {
+  border-bottom: 1px solid #e8e8e8;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.statsTable thead th {
+  background: #f0f0f0;
+  font-weight: 600;
+  color: #333;
+}
+
+.statsTable tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.statsTable tfoot td {
+  font-weight: 700;
+  background: #f5e6e6;
+  color: #333;
+  border-bottom: none;
+}
+
+.statsTableFoot td {
+  border-top: 2px solid #800000;
+}

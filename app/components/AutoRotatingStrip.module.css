@@ -1,0 +1,79 @@
+.stripContainer {
+  background: var(--theme-maroon);
+  padding: 8px 0;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border-top: 2px solid var(--theme-gold);
+  border-bottom: 2px solid var(--theme-gold);
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+.marqueeContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: max-content;
+}
+
+.statItem {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  white-space: nowrap;
+  padding: 0 30px;
+}
+
+.statValue {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--theme-gold);
+}
+
+.statLabel {
+  font-size: 1.4rem;
+  font-family: 'Brush Script MT', 'Great Vibes', 'Dancing Script', cursive;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.2);
+  margin-left: 15px;
+  font-size: 1.2rem;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .stripContainer {
+    padding: 6px 0;
+  }
+  .statItem {
+    padding: 0 15px;
+  }
+  .statValue {
+    font-size: 1.1rem;
+  }
+  .statLabel {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,128 @@
+.scrollContainer {
+  width: 100%;
+  overflow-x: auto;
+  padding: 20px 0;
+  scrollbar-width: none; /* Hide default scrollbar */
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollContent {
+  display: flex;
+  gap: 25px;
+  width: max-content;
+  padding: 0 10px 10px 10px;
+}
+
+.blogCard {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  width: 320px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+}
+
+.blogCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+
+.blogImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.blogCard:hover .blogImage {
+  transform: scale(1.05);
+}
+
+.blogContent {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.blogTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--theme-maroon);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.blogDescription {
+  font-size: 0.9rem;
+  color: #555555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.readMoreBtn {
+  display: inline-block;
+  padding: 8px 20px;
+  background: var(--theme-gold);
+  color: #000000;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+  align-self: flex-start;
+}
+
+.readMoreBtn:hover {
+  background: var(--theme-gold-light);
+  transform: translateY(-2px);
+}
+
+/* Dots Pagination */
+.paginationDots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(107, 5, 4, 0.2); /* theme-maroon with opacity */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot:hover {
+  background-color: rgba(107, 5, 4, 0.5);
+}
+
+.activeDot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--theme-maroon);
+  box-shadow: 0 0 5px rgba(107, 5, 4, 0.4);
+}

@@ -1,0 +1,456 @@
+.pageContainer {
+  min-height: 100vh;
+  background: #f4f7fb;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #1e293b;
+}
+
+/* Top Progress Stepper Header */
+.stepperHeader {
+  background: #172b4d;
+  width: 100%;
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stepperContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.stepItem {
+  flex: 1;
+  text-align: center;
+  padding: 16px 12px 14px 12px;
+  color: #94a3b8;
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.stepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.15);
+  color: #cbd5e1;
+}
+
+.stepActive {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.stepActive .stepNumber {
+  background: #f59e0b;
+  color: #ffffff;
+}
+
+.stepCompleted {
+  color: #e2e8f0;
+}
+
+.stepCompleted .stepNumber {
+  background: #10b981;
+  color: #ffffff;
+}
+
+/* Active bottom indicator bar */
+.stepItem::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+  transition: background 0.25s ease;
+}
+
+.stepActive::after {
+  background: #f59e0b;
+}
+
+.stepCompleted::after {
+  background: #10b981;
+}
+
+/* Card Content Area */
+.formMain {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.cardBox {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  max-width: 680px;
+  width: 100%;
+  padding: 40px 48px;
+}
+
+.headerTextGroup {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.mainTitle {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.subTitle {
+  font-size: 1rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Form Groups */
+.formGroup {
+  margin-bottom: 24px;
+}
+
+.formLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.infoIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #94a3b8;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: help;
+}
+
+.requiredTag {
+  color: #ef4444;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+/* Mobile Input with Flag */
+.phoneInputWrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.phoneInputWrapper:focus-within {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+}
+
+.countryCodeBlock {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border-right: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+  user-select: none;
+}
+
+.flag {
+  font-size: 1.15rem;
+}
+
+.chevronDown {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.phoneField {
+  flex: 1;
+  border: none;
+  padding: 12px 16px;
+  font-size: 1rem;
+  outline: none;
+  color: #0f172a;
+}
+
+.phoneField::placeholder {
+  color: #94a3b8;
+}
+
+/* Standard Inputs */
+.textInput,
+.selectInput {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 0.98rem;
+  color: #0f172a;
+  background: #ffffff;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.textInput:focus,
+.selectInput:focus {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+}
+
+.textInput::placeholder {
+  color: #94a3b8;
+}
+
+/* Gender Toggle Buttons */
+.genderButtonGroup {
+  display: flex;
+  gap: 12px;
+}
+
+.genderButton {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #475569;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.genderButton:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.genderButtonActive {
+  background: #ffffff;
+  border-color: #f59e0b;
+  color: #d97706;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
+}
+
+/* Referral code link */
+.referralNote {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 18px 0 28px 0;
+}
+
+.referralLink {
+  color: #0f172a;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Date & Time Slot Grid for Step 2 */
+.slotsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.slotButton {
+  padding: 12px 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #334155;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.slotButton:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.slotButtonActive {
+  background: #ffffff;
+  border-color: #f59e0b;
+  color: #d97706;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+}
+
+/* Action Submit Button */
+.ctaButton {
+  width: 100%;
+  padding: 14px 20px;
+  background: #f6b73c;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(246, 183, 60, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ctaButton:hover {
+  background: #f59e0b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.45);
+}
+
+.ctaButton:disabled {
+  background: #cbd5e1;
+  color: #64748b;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.buttonRow {
+  display: flex;
+  gap: 14px;
+}
+
+.backButton {
+  padding: 14px 24px;
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  background: #e2e8f0;
+}
+
+/* Terms Footer */
+.termsFooter {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 24px;
+}
+
+.termsFooter a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* Success View */
+.successBox {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.successIcon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  margin: 0 auto 20px auto;
+}
+
+.detailsSummary {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 24px 0;
+  text-align: left;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.95rem;
+}
+
+.summaryRow:last-child {
+  border-bottom: none;
+}
+
+.summaryLabel {
+  color: #64748b;
+}
+
+.summaryVal {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .cardBox {
+    padding: 28px 20px;
+  }
+  
+  .stepItem {
+    font-size: 0.8rem;
+    padding: 12px 6px;
+  }
+
+  .genderButtonGroup {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mainTitle {
+    font-size: 1.55rem;
+  }
+}

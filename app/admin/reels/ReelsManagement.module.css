@@ -1,0 +1,310 @@
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.headerSection {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.headerSection h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.headerSection p {
+    color: #666;
+}
+
+.formCard {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 3rem;
+}
+
+.formTitle {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: #444;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.formGroup input,
+.formGroup select {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: white;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+.uploadButton {
+    background-color: #007bff;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    align-self: flex-end;
+}
+
+.uploadButton:hover {
+    background-color: #0056b3;
+}
+
+.uploadButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.reelGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.reelCard {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.reelCard:hover {
+    transform: translateY(-5px);
+}
+
+.thumbnailWrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 177.77%; /* 9:16 aspect ratio */
+}
+
+.thumbnailImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.reelInfo {
+    padding: 1.2rem;
+}
+
+.reelInfo h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.reelMeta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.reelStats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.formActions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.actionRow {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.viewBtn,
+.editBtn,
+.deleteBtn {
+    flex: 1;
+    border: none;
+    padding: 0.6rem 0.4rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+.viewBtn {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.viewBtn:hover {
+    background-color: #138496;
+}
+
+.editBtn {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.editBtn:hover {
+    background-color: #e0a800;
+}
+
+.deleteBtn {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.deleteBtn:hover {
+    background-color: #e60000;
+}
+
+.modalBackdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.viewModal,
+.editModal {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.editModal {
+    max-width: 520px;
+}
+
+.modalClose {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #666;
+}
+
+.modalTitle {
+    margin: 0 2rem 0.5rem 0;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.modalMeta {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.videoWrapper {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    max-height: 60vh;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.previewVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: 0;
+}
+
+.modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.cancelBtn {
+    background: #eee;
+    color: #333;
+    border: none;
+    padding: 0.65rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.saveBtn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.65rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.saveBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.loading, .emptyState {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+}
+
+.emptySubtext {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
